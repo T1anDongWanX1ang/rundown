@@ -1,0 +1,5 @@
+# Rundown 赛程与比分 ETL 运行依赖
+# 安装: pip install -r requirements.txt
+requests==2.32.3
+PyMySQL==1.1.1
+python-dotenv==1.0.1

@@ -1,0 +1,22 @@
+[Unit]
+Description=Rundown football NFL NBA schedule and score ETL
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/worldcup-rundown
+ExecStart=/opt/worldcup-rundown/.venv/bin/python rundown_etl.py serve
+Environment=PYTHONIOENCODING=utf-8
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=rundown-etl
+
+[Install]
+WantedBy=multi-user.target

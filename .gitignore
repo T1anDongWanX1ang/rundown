@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.log
+logs/
+*.pid
+.state/
+
+_probe_*.py
+probe_odds.py
+.claude/settings.local.json
+*.err
